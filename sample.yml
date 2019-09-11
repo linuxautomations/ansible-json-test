@@ -1,0 +1,8 @@
+- name: Demo on Ansible using JSON input 
+  hosts: localhost 
+  vars:
+    jsonVar: "{{ lookup('file', 'var.json') | from_json }}"
+  tasks:
+    - name: Print A value from JSON 
+      debug:
+        msg: "Value = "
